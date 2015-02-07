@@ -2,6 +2,7 @@
   "name": "peterkaletacom",
   "version": "0.0.1",
   "dependencies": {
+    "gulp-plumber": "^0.6.6",
     "hapi": "^8.1.0"
   },
   "devDependencies": {
