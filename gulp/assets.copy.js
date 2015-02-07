@@ -25,11 +25,6 @@ gulp.task('assets:copy:fonts', function () {
     .pipe(gulp.dest(paths.fontsDest));
 });
 
-gulp.task('assets:bower:install', function () {
-  gulp.src(paths.bowerDir + '/fontawesome/fonts/*.{ttf,woff,eof,svg,eot}')
-    .pipe(gulp.dest(paths.fontsDest));
-});
-
 gulp.task('watch:assets', ['assets:copy'], function () {
   gulp.watch(paths.clientDir + '/index.html', ['assets:copy:html']);
   gulp.watch(paths.imagesDir + '/*.svg', ['assets:copy:images']);

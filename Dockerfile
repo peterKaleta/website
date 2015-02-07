@@ -2,8 +2,11 @@ FROM dockerfile/nodejs
 
 MAINTAINER Peter Kaleta <mail@peterkaleta.com>
 
-RUN sudo npm install -g gulp bower
-RUN sudo apt-get update && sudo apt-get install -y libfreetype6 libfontconfig1
+RUN npm install -g gulp bower
+RUN apt-get update
+RUN apt-get install -y ruby-full rubygems-integration
+RUN gem install sass
+RUN gem install compass
 
 RUN mkdir /web
 WORKDIR /web
@@ -16,3 +19,5 @@ RUN bower install --allow-root
 
 VOLUME /web/code
 WORKDIR /web/code
+
+EXPOSE 3000

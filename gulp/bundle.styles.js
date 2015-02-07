@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-ruby-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var size = require('gulp-size');
 var autoprefixer = require('gulp-autoprefixer');
@@ -19,18 +19,17 @@ var isProduction = ( process.env.NODE_ENV === 'production' );
 gulp.task('bundle:styles', function () {
 
   var sassOptions = {
-    outputStyle: 'compressed',
-    includePaths: [
+    style: 'compressed',
+    sourcemap: true,
+    loadPath: [
       paths.bowerDir + '/bootswatch/superhero/',
       paths.bowerDir + '/bootstrap-sass-official/assets/stylesheets/',
       paths.bowerDir + '/fontawesome/scss'
     ]
   };
 
-  return gulp.src(paths.sassDir + '/*.scss')
+  return sass(paths.sassDir + '/styles.scss', sassOptions)
     .pipe(plumber())
-    .pipe(gulpif(!isProduction, sourcemaps.init()))
-    .pipe(sass(sassOptions))
     .on('error', function () {
       gutil.log(arguments);
       this.emit('end');

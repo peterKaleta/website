@@ -25,5 +25,5 @@ gulp.task('clean', function () {
 });
 
 gulp.task('watch', ['assets:copy', 'watch:scripts', 'watch:styles', 'watch:assets']);
-gulp.task('build', ['assets:bower:install','assets:copy', 'bundle:styles', 'bundle:scripts']);
+gulp.task('build', ['assets:copy', 'bundle:styles', 'bundle:scripts']);
 gulp.task('default', ['connect', 'watch']);
