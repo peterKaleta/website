@@ -1,0 +1,81 @@
+.main.container{
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+.main.container > .row{
+  margin-top:-100px;
+}
+
+.intro{
+  hgroup{
+    display:inline-block;
+  }
+
+  h4{
+    margin-top:5px;
+  }
+
+  h2{
+    margin-bottom:5px;
+  }
+
+  ul.who-am-i{
+    list-style:none;
+    margin:0;
+    padding:0;
+    li{
+      display:inline-block;
+    }
+    li:after{
+      content: '/';
+      color:#999;
+      margin:0 3px;
+      display:inline-block;
+      font-size:1.125em;
+    }
+    li:last-child:after{
+      content:''
+    }
+  }
+
+}
+
+.what-i-do{
+  margin-top:20px;
+}
+
+.my-skills{
+    ul{
+    list-style:none;
+    margin:0;
+    font-size:12px;
+
+    padding:0;
+    text-transform: uppercase;
+    color:#ddd;
+  }
+  ul > li > ul {
+    display:inline;
+  }
+  li{
+    display:inline;
+  }
+  li span {
+    background: rgba(255,255,255,0.5);
+    padding: 4px;
+    margin:2px;
+    display:inline-block;
+
+  }
+  li > ul > li span{
+    background: rgba(255,255,255,0.2);
+  }
+
+}

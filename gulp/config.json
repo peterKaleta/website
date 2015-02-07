@@ -1,0 +1,15 @@
+{
+  "notifyLvl": 1,
+  "paths" : {
+    "clientDir": "./client",
+    "appDir" : "./client/app",
+    "buildDir": "./client/build",
+    "bowerDir": "./client/bower_components",
+    "sassDir": "./client/assets/styles/sass",
+    "cssDir": "./client/build/css",
+    "scriptsDest": "./client/build/js",
+    "fontsDest": "./client/build/fonts",
+    "imagesDest": "./client/build/images",
+    "imagesDir": "./client/assets/images"
+  }
+}

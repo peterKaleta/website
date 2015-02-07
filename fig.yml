@@ -1,0 +1,9 @@
+web:
+  build: .
+  command: gulp
+  volumes:
+    - .:/web/code
+  environment:
+    PRODUCTION: 1
+  ports:
+    - "8989:8080"

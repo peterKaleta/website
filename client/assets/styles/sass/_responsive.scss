@@ -1,0 +1,31 @@
+@media only screen and (min-width : 992px) and (max-width : 1198px){
+  .what-i-do{
+    p{
+      display:inline;
+    }
+  }
+}
+
+@media only screen and (max-width : 768px){
+  .what-i-do{
+    p{
+      display:inline;
+    }
+  }
+}
+
+@media only screen and (max-width : 480px), screen and (max-height:480px){
+  .main.container{
+    display:block;
+    padding-bottom:90px;
+    & > .row{
+      margin-top:20px;
+    }
+  }
+}
+
+@media only screen and  (max-width : 992px){
+  .what-i-do{
+    margin:10px 0 50px 0;
+  }
+}

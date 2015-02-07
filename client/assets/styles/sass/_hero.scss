@@ -1,0 +1,28 @@
+header.hero{
+  position:fixed;
+  bottom:0;
+  right:0;
+  left:0;
+  margin:0;
+  background-color: #223342;
+  z-index: 100;
+}
+
+.stamp-wrapper{
+
+  display:block;
+  width:50px;
+  margin:auto;
+  padding:4px;
+  padding-top:7px;
+}
+
+svg.stamp{
+  width:100%;
+  .lotos{
+    fill:#999;
+  }
+  .lotos-center{
+    fill:#f0ad4e;
+  }
+}
