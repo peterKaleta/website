@@ -17,7 +17,8 @@ RUN  npm install
 ADD ./bower.json /web/bower.json
 RUN bower install --allow-root
 
-VOLUME /web/code
+ADD . /web/code
 WORKDIR /web/code
+RUN gulp build
 
 EXPOSE 3000
