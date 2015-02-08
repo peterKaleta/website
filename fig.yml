@@ -4,6 +4,6 @@ web:
   volumes:
     - .:/web/code
   environment:
-    PRODUCTION: 1
+    NODE_ENV: production
   ports:
     - "80:3000"

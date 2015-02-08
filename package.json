@@ -1,6 +1,11 @@
 {
   "name": "peterkaletacom",
   "version": "0.0.1",
+  "description": "personal website",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/peterKaleta/website.git"
+  },
   "dependencies": {
     "gulp-plumber": "^0.6.6",
     "hapi": "^8.1.0"

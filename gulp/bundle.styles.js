@@ -9,6 +9,7 @@ var rename = require('gulp-rename');
 var plumber = require('gulp-plumber');
 var gulpif = require('gulp-if');
 var gutil = require('gulp-util');
+var gulpif = require('gulp-if');
 
 var config = require('./config.json');
 var paths = config.paths;
@@ -39,7 +40,7 @@ gulp.task('bundle:styles', function () {
     .pipe(gulpif(!isProduction, sourcemaps.write('./')))
     .pipe(size({ showFiles: true }))
     .pipe(gulp.dest(paths.cssDir))
-    .pipe(devServer.reload());
+    .pipe(gulpif(!isProduction, devServer.reload()));
 
 });
 

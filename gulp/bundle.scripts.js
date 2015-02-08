@@ -42,7 +42,7 @@ gulp.task('bundle:scripts', function () {
     .pipe(gulpif(!isProduction, sourcemaps.write('./')))
     .pipe(size({ showFiles: true }))
     .pipe(gulp.dest(paths.scriptsDest))
-    .pipe(devServer.reload());
+    .pipe(gulpif(!isProduction, devServer.reload()));
 
 });
 

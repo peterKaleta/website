@@ -19,6 +19,7 @@ RUN bower install --allow-root
 
 ADD . /web/code
 WORKDIR /web/code
+
 RUN gulp build
 
 EXPOSE 3000

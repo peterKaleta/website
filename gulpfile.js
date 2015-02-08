@@ -10,20 +10,32 @@ var paths = config.paths;
 
 notify.logLevel(config.notifyLvl);
 
-require('./gulp/assets.copy');
+require('./gulp/assets');
 require('./gulp/bundle.scripts');
 require('./gulp/bundle.styles');
 
-gulp.task('connect', devServer.server({
-    root: ['client/build'],
-    port: 8989,
-    livereload: true
-}));
-
-gulp.task('clean', function () {
-  del([paths.buildDir]);
+gulp.task('connect', function () {
+    return devServer.server({
+        root: ['client/build'],
+        port: 8989,
+        livereload: true
+    });
 });
 
-gulp.task('watch', ['assets:copy', 'watch:scripts', 'watch:styles', 'watch:assets']);
-gulp.task('build', ['assets:copy', 'bundle:styles', 'bundle:scripts']);
+gulp.task('clean', function () {
+  return del([paths.buildDir]);
+});
+
+gulp.task('watch', ['connect'], function(){
+  gulp.start('assets:copy');
+  gulp.start('watch:scripts');
+  gulp.start('watch:styles');
+  gulp.start('watch:assets');
+});
+
+gulp.task('build', ['clean', 'assets:bower:install'], function () {
+  gulp.start('assets:copy');
+  gulp.start('bundle:styles');
+  gulp.start('bundle:scripts');
+});
 gulp.task('default', ['connect', 'watch']);
