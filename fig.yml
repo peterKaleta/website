@@ -1,6 +1,6 @@
 web:
   build: .
-  command: node server/app.js
+  command: ./start.sh
   volumes:
     - .:/web/code
   environment:
