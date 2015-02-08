@@ -14,5 +14,5 @@ WORKDIR /web
 ADD ./package.json /web/package.json
 RUN  npm install
 
-VOLUME . /web/code
+VOLUME /web/code
 WORKDIR /web/code
