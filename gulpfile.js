@@ -38,4 +38,5 @@ gulp.task('build', ['clean', 'assets:bower:install'], function () {
   gulp.start('bundle:styles');
   gulp.start('bundle:scripts');
 });
+
 gulp.task('default', ['connect', 'watch']);
