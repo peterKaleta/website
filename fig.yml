@@ -1,6 +1,8 @@
 web:
   build: .
   command: node server/app.js
+  volumes:
+    - .:/web/code
   environment:
     NODE_ENV: production
   ports:

@@ -14,12 +14,5 @@ WORKDIR /web
 ADD ./package.json /web/package.json
 RUN  npm install
 
-ADD ./bower.json /web/bower.json
-RUN bower install --allow-root
-
-ADD . /web/code
+VOLUME . /web/code
 WORKDIR /web/code
-
-RUN gulp build
-
-EXPOSE 3000
