@@ -16,7 +16,7 @@ require('./gulp/bundle.styles');
 
 gulp.task('connect', function () {
     return devServer.server({
-        root: ['client/build'],
+        root: ['./client/build'],
         port: 8989,
         livereload: true
     });

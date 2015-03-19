@@ -2,6 +2,6 @@
 .DS_Store
 
 node_modules/
-client/build
+/build
 client/bower_components
 .sass-cache/

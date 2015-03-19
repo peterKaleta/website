@@ -9,8 +9,11 @@ var buffer = require('vinyl-buffer');
 var plumber = require('gulp-plumber');
 var watchify = require('watchify');
 var browserify = require('browserify');
+var babelify = require('babelify');
+var babel = require('gulp-babel');
 var gulpif = require('gulp-if');
 var gutil = require('gulp-util');
+var rename = require('gulp-rename');
 
 var config = require('./config.json');
 var paths = config.paths;
@@ -20,14 +23,23 @@ var devServer = require('./server');
 
 var bundler = browserify({
   entries: [paths.appDir + '/app.jsx'],
-  transform: [reactify],
+  transform: [reactify, babelify],
   debug: !isProduction,
   cache: {},
   packageCache: {},
   fullPaths: true
 });
 
-gulp.task('bundle:scripts', function () {
+gulp.task('bundle:scripts:server', function () {
+  return gulp.src(paths.serverDir + '/**/*.es6')
+        .pipe(babel())
+        .pipe(rename({
+          extname: '.js'
+        }))
+        .pipe(gulp.dest(paths.buildServerDir));
+});
+
+gulp.task('bundle:scripts:client', function () {
 
   return bundler.bundle()
     .on('error', function () {
@@ -46,14 +58,18 @@ gulp.task('bundle:scripts', function () {
 
 });
 
+gulp.task('bundle:scripts', ['bundle:scripts:server', 'bundle:scripts:client']);
+
 gulp.task('watch:scripts', function () {
 
   bundler = watchify(bundler);
 
   bundler.on('update', function () {
-    gulp.start('bundle:scripts');
+    gulp.start('bundle:scripts:client');
   });
 
-  gulp.start('bundle:scripts');
+  gulp.start('bundle:scripts:client');
+
+  gulp.watch(paths.serverDir + '/**/*.es6', ['bundle:scripts:server']);
 
 });

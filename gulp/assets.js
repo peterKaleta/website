@@ -13,7 +13,7 @@ gulp.task('assets:copy', ['assets:copy:html', 'assets:copy:fonts', 'assets:copy:
 
 gulp.task('assets:copy:html', function () {
   return gulp.src(paths.clientDir + '/index.html')
-  .pipe(gulp.dest(paths.buildDir))
+  .pipe(gulp.dest(paths.buildClientDir))
   .pipe(gulpif(!isProduction, devServer.reload()));
 });
 

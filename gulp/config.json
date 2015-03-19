@@ -2,14 +2,17 @@
   "notifyLvl": 1,
   "paths" : {
     "clientDir": "./client",
+    "serverDir": "./server",
     "appDir" : "./client/app",
-    "buildDir": "./client/build",
+    "buildDir": "./build",
+    "buildServerDir": "./build/server",
+    "buildClientDir": "./build/client",
     "bowerDir": "./client/bower_components",
     "sassDir": "./client/assets/styles/sass",
-    "cssDir": "./client/build/css",
-    "scriptsDest": "./client/build/js",
-    "fontsDest": "./client/build/fonts",
-    "imagesDest": "./client/build/images",
-    "imagesDir": "./client/assets/images"
+    "imagesDir": "./client/assets/images",
+    "cssDir": "./build/client/css",
+    "scriptsDest": "./build/client/js",
+    "fontsDest": "./build/client/fonts",
+    "imagesDest": "./build/client/images"
   }
 }

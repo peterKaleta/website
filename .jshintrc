@@ -5,6 +5,7 @@
   "eqnull": true,
   "freeze": true,
   "funcscope": true,
+  "esnext": true,
   "globals": {
     "require": true,
     "module": true,

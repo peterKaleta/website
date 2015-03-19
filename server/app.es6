@@ -1,7 +1,9 @@
+'use strict';
 
-var Hapi = require('hapi');
+import Hapi from 'hapi';
 
-var server = new Hapi.Server();
+let server = new Hapi.Server();
+
 server.connection({ port: 3000 });
 
 server.route({

@@ -1,26 +1,25 @@
 
 'use strict';
 
-var React = require('react');
-var Bootstrap = require('react-bootstrap');
-var _ = require('lodash');
+let React = require('react');
+let Bootstrap = require('react-bootstrap');
+let _ = require('lodash');
+let Svg = require('react-svg');
+let Grid = Bootstrap.Grid;
+let Row = Bootstrap.Row;
+let Col = Bootstrap.Col;
 
-var Svg = require('react-svg');
-var Grid = Bootstrap.Grid;
-var Row = Bootstrap.Row;
-var Col = Bootstrap.Col;
-
-var Wrapper = React.createClass({
+let Wrapper = React.createClass({
 
     skillGroups: {
-      'Frontend & JS': ['Isomorphic apps', 'React', 'Backbone', 'Polymer', 'Node', 'css3', 'html5', 'sass', 'less', 'Responsive'],
+      'Frontend & JS': ['ES6', 'Isomorphic apps', 'React', 'Backbone', 'Polymer', 'Node', 'css3', 'html5', 'sass', 'less', 'Responsive'],
       'User Experience': ['Rapid prototyping','UCD', 'Metric based UX'],
       'workflow & tests' : ['gulp', 'grunt', 'docker', 'bower', 'Git', 'Browserify', 'TDD', 'BDD', 'Jasmine', 'Sinon', 'Phantom'],
       'Data' : [ 'rest api', 'postgre', 'mongo']
     },
 
     renderSkills: function (skills) {
-      return _.map(skills, function (skill, index) {
+      return _.map(skills, (skill, index) => {
         return (
           <li key={index}>
             <span>{skill}</span>
@@ -30,18 +29,18 @@ var Wrapper = React.createClass({
     },
 
     renderSkillGroups: function () {
-        var self = this;
-        var skillGroups = _.map( _.keys(this.skillGroups), function(name, index){
-          var skills = self.renderSkills(self.skillGroups[name]);
+        let skillGroups = _.map( _.keys(this.skillGroups), (name, index) => {
+          let skills = this.renderSkills(this.skillGroups[name]);
           return (
             <li key={index}>
               <span>{name}</span>
               <ul>{skills}</ul>
             </li>);
         });
+
         return (
           <ul>
-          {skillGroups}
+            {skillGroups}
           </ul>);
     },
 
@@ -71,8 +70,9 @@ var Wrapper = React.createClass({
                       </hgroup>
                   </header>
                   <div className="text-dimmed what-i-do">
-                    <p>I enjoy building web apps using edge technology stacks and metric based User Experience.</p>
+                    <p>I develop web apps with edge technology stacks and metric based User Experience.</p>
                     <p>You can find me on <a>LinkedIn</a>, <a>Twitter</a> or contact me directly at <a>mail@peterkaleta.com</a></p>
+
                   </div>
                 </Col>
                 <Col md={5}>
