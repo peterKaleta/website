@@ -11,7 +11,7 @@ server.route({
   path: '/{param*}',
   handler: {
     directory: {
-      path: 'client/build/',
+      path: 'build/client/',
       index: true
     }
   }

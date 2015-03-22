@@ -1,20 +1,18 @@
-
 'use strict';
 
-let React = require('react');
-let Bootstrap = require('react-bootstrap');
-let _ = require('lodash');
-let Svg = require('react-svg');
-let Grid = Bootstrap.Grid;
-let Row = Bootstrap.Row;
-let Col = Bootstrap.Col;
+import React from 'react';
+import Bootstrap from 'react-bootstrap';
+import _ from 'lodash';
+import Svg from 'react-svg';
+
+const {Grid, Row, Col} = Bootstrap;
 
 let Wrapper = React.createClass({
 
     skillGroups: {
       'Frontend & JS': ['ES6', 'Isomorphic apps', 'React', 'Backbone', 'Polymer', 'Node', 'css3', 'html5', 'sass', 'less', 'Responsive'],
       'User Experience': ['Rapid prototyping','UCD', 'Metric based UX'],
-      'workflow & tests' : ['gulp', 'grunt', 'docker', 'bower', 'Git', 'Browserify', 'TDD', 'BDD', 'Jasmine', 'Sinon', 'Phantom'],
+      'workflow & tests' : ['gulp', 'grunt', 'docker', 'bower', 'Git', 'Browserify','Webpack', 'TDD', 'BDD', 'Jasmine', 'Sinon', 'Phantom'],
       'Data' : [ 'rest api', 'postgre', 'mongo']
     },
 
@@ -71,9 +69,9 @@ let Wrapper = React.createClass({
                   </header>
                   <div className="text-dimmed what-i-do">
                     <p>I develop web apps with edge technology stacks and metric based User Experience.</p>
-                    <p>You can find me on <a>LinkedIn</a>, <a>Twitter</a> or contact me directly at <a>mail@peterkaleta.com</a></p>
-
-                  </div>
+                    <p>You can find me on <a href="http://www.linkedin.com/in/peterkaleta" target="_blank">LinkedIn</a>, <a href="http://twitter.com/peterkaleta" target="_blank">Twitter</a> or contact me directly at <a href="mailto:mail@peterkaleta.com">mail@peterkaleta.com</a></p>
+                    <p>Check out <a href="http://www.nomadpins.com" target="_blank">Nomad Pins</a> my blog where I share awesome places to live and work from.</p>
+                   </div>
                 </Col>
                 <Col md={5}>
                   <div className="my-skills">

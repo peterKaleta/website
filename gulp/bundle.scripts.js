@@ -23,7 +23,7 @@ var devServer = require('./server');
 
 var bundler = browserify({
   entries: [paths.appDir + '/app.jsx'],
-  transform: [reactify, babelify],
+  transform: [babelify, reactify],
   debug: !isProduction,
   cache: {},
   packageCache: {},
