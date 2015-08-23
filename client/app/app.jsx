@@ -2,21 +2,21 @@
 
 import React from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
-import _ from 'lodash';
 import Svg from 'react-svg';
+import _ from 'lodash';
 import '../assets/styles/sass/styles.scss';
 import '../bower_components/bootswatch-dist/css/bootstrap.min.css';
 
-let Wrapper = React.createClass({
+class Wrapper extends React.Component {
 
-    skillGroups: {
+    skillGroups = {
       'Frontend & JS': ['ES6', 'Isomorphic apps', 'React', 'Backbone', 'Polymer', 'Node', 'css3', 'html5', 'sass', 'less', 'Responsive'],
-      'User Experience': ['Rapid prototyping','UCD', 'Metric based UX'],
-      'workflow & tests' : ['gulp', 'grunt', 'docker', 'bower', 'Git', 'Browserify','Webpack', 'TDD', 'BDD', 'Jasmine', 'Sinon', 'Phantom'],
-      'Data' : [ 'rest api', 'postgre', 'mongo']
-    },
+      'User Experience': ['Rapid prototyping', 'UCD', 'Metric based UX'],
+      'workflow & tests': ['gulp', 'grunt', 'docker', 'bower', 'Git', 'Browserify', 'Webpack', 'TDD', 'BDD', 'Jasmine', 'Sinon', 'Phantom'],
+      'Data': [ 'rest api', 'postgre', 'mongo']
+    }
 
-    renderSkills: function (skills) {
+    renderSkills(skills) {
       return _.map(skills, (skill, index) => {
         return (
           <li key={index}>
@@ -24,10 +24,10 @@ let Wrapper = React.createClass({
           </li>
         );
       });
-    },
+    }
 
-    renderSkillGroups: function () {
-        let skillGroups = _.map( _.keys(this.skillGroups), (name, index) => {
+    renderSkillGroups() {
+        let skillGroups = _.map(_.keys(this.skillGroups), (name, index) => {
           let skills = this.renderSkills(this.skillGroups[name]);
           return (
             <li key={index}>
@@ -40,9 +40,9 @@ let Wrapper = React.createClass({
           <ul>
             {skillGroups}
           </ul>);
-    },
+    }
 
-    render: function() {
+    render() {
         return (
           <div className="wrapper">
             <header className="hero">
@@ -84,7 +84,7 @@ let Wrapper = React.createClass({
           </div>
         );
     }
-});
+}
 
 React.render(
     <Wrapper />,

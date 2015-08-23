@@ -12,7 +12,7 @@ var _inert2 = _interopRequireDefault(_inert);
 
 var server = new _hapi2['default'].Server();
 
-server.connection({ port: 3000 });
+server.connection({ port: process.env.PORT || 3000 });
 server.register(_inert2['default'], function () {});
 
 server.route({

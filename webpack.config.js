@@ -15,6 +15,12 @@ var conf = new webpackConf({
                     path: path.join(__dirname, '/dist/client'),
                     filename: 'main.js'
                 },
+                resolve: {
+                   alias: {
+                       'react': __dirname + '/node_modules/react',
+                       'react/addons': __dirname + '/node_modules/react/addons',
+                   }
+                },
                 plugins: plugins
             })
             .iNeedReact()
