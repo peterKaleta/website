@@ -10,7 +10,7 @@ import '../bower_components/bootswatch-dist/css/bootstrap.min.css';
 class Wrapper extends React.Component {
 
     skillGroups = {
-      'Frontend & JS': ['ES6', 'Isomorphic apps', 'React', 'Backbone', 'Polymer', 'Node', 'css3', 'html5', 'sass', 'less', 'Responsive'],
+      'Frontend & JS': ['ES7', 'ES6', 'Isomorphic apps', 'React', 'Backbone', 'Polymer', 'Node', 'css3', 'html5', 'sass', 'less', 'Responsive'],
       'User Experience': ['Rapid prototyping', 'UCD', 'Metric based UX'],
       'workflow & tests': ['gulp', 'grunt', 'docker', 'bower', 'Git', 'Browserify', 'Webpack', 'TDD', 'BDD', 'Jasmine', 'Sinon', 'Phantom'],
       'Data': [ 'rest api', 'postgre', 'mongo']
@@ -62,7 +62,7 @@ class Wrapper extends React.Component {
                           <ul className="who-am-i">
                             <li><span className="text-warning">JavaScript</span> developer</li>
                             <li><span className="text-warning">UX</span> prototyper</li>
-                            <li><span className="text-warning">#digitalnomad</span></li>
+                            <li><span className="text-warning">traveler</span></li>
                           </ul>
                         </h4>
                       </hgroup>
