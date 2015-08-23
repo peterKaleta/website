@@ -4,6 +4,8 @@ import React from 'react';
 import Bootstrap from 'react-bootstrap';
 import _ from 'lodash';
 import Svg from 'react-svg';
+import '../assets/styles/sass/styles.scss';
+import '../bower_components/bootswatch-dist/css/bootstrap.min.css';
 
 const {Grid, Row, Col} = Bootstrap;
 
