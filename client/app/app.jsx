@@ -10,7 +10,7 @@ import '../bower_components/bootswatch-dist/css/bootstrap.min.css';
 class Wrapper extends React.Component {
 
     skillGroups = {
-      'Frontend & JS': ['ES7', 'ES6', 'Isomorphic apps', 'React', 'Backbone', 'Polymer', 'Node', 'css3', 'html5', 'sass', 'less', 'Responsive'],
+      'Frontend & JS': ['ES7', 'ES6', 'Isomorphic apps', 'React','Flux', 'Backbone', 'Polymer', 'Node', 'css3', 'html5', 'sass', 'less', 'Responsive'],
       'User Experience': ['Rapid prototyping', 'UCD', 'Metric based UX'],
       'workflow & tests': ['gulp', 'grunt', 'docker', 'bower', 'Git', 'Browserify', 'Webpack', 'TDD', 'BDD', 'Jasmine', 'Sinon', 'Phantom'],
       'Data': [ 'rest api', 'postgre', 'mongo']
